@@ -1,0 +1,17 @@
+.header{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   /* position: fixed; */
+   /* width: 90%; */
+
+}
+
+.title{
+   font-size: 18px;
+   font-family: monospace;
+   letter-spacing: 20px;
+   margin: 20px;
+   text-align: center;
+
+}

@@ -1,0 +1,15 @@
+.hey{
+   font-size: larger;
+}
+.my_page_wrapper{
+   background-color: floralwhite;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.posts{
+   display: flex;
+   flex-direction: column;
+   width: 65%;
+}
