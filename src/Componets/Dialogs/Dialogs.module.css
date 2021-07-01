@@ -1,0 +1,30 @@
+.dialogs_wrapper{
+   width: 98%;
+   height: 100%;
+
+   margin-left: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.contacts_wrapper{
+   display: flex;
+   flex-direction: column;
+   width: 30%;
+   height: 100%;
+   max-height: 100vh;
+   overflow: auto;
+   
+   
+}
+.contact_message_wrapper{
+   display: flex;
+   flex-direction: column;
+   width: 65%;
+   height: 100%;
+   background-color: white;
+}
+::-webkit-scrollbar { /* chrome based */
+   width: 0px;  /* ширина scrollbar'a */
+   background: transparent;  /* опционально */
+}

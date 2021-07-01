@@ -3,8 +3,15 @@
    font-family: monospace;
    letter-spacing: 10px;
    padding: 10px 0px 10px 10px;
+   display: block;
+   transition-duration: 0.5s;
 }
 .side_bar_wrapper__item:hover{
-   background-color:rgba(247, 247, 247, 0.43)
+   background-color:rgba(247, 247, 247, 0.43);
+   transition-duration: 0.5s;
 }
 
+.side_bar_wrapper__item.activeLink{
+   background-color: floralwhite;
+   transition-duration: 0.5s;
+}

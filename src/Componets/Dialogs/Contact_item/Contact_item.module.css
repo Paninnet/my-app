@@ -1,0 +1,27 @@
+.conact_item{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-bottom: 15px;
+   background-color: white;
+}
+.MyFIO{
+   font-size: 17px;
+   font-weight: 600;
+   margin-top: 10px;
+   padding-bottom: 5px;
+   font-family: monospace;
+   margin-left: 20px;
+   color: black;
+}
+.MyFIO.activeLink{
+   color: black;
+}
+.litle_foto{
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   background-color: brown;
+   display: block;
+   
+}
