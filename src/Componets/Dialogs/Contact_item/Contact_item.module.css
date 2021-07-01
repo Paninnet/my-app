@@ -7,15 +7,16 @@
 }
 .MyFIO{
    font-size: 17px;
-   font-weight: 600;
+   
    margin-top: 10px;
    padding-bottom: 5px;
    font-family: monospace;
    margin-left: 20px;
    color: black;
+   
 }
 .MyFIO.activeLink{
-   color: black;
+   font-weight: 900;
 }
 .litle_foto{
    width: 50px;

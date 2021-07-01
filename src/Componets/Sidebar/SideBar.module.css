@@ -5,6 +5,7 @@
    padding: 10px 0px 10px 10px;
    display: block;
    transition-duration: 0.5s;
+   color: black;
 }
 .side_bar_wrapper__item:hover{
    background-color:rgba(247, 247, 247, 0.43);

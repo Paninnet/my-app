@@ -11,6 +11,11 @@ const AllPosts =(props) => {
          <div className = {classes.post_body}>
             <p className ={classes.post}>{props.message}</p>
          </div>
+
+         <div className = {classes.lIkes_delete_post}>
+            <button className = {classes.delete}>Удалить</button>
+            <button className = {classes.like}>Лакнуть:{props.quantityLikes}</button>
+         </div>
          
       </div>
    )

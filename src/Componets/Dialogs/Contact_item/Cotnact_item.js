@@ -4,7 +4,7 @@ const ContactItem = (props) =>{
    return (
       <div className = {classes.conact_item}>
          <div className={classes.litle_foto}></div>
-         <NavLink to ="#"   className={classes.MyFIO}>{props.name}</NavLink>
+         <NavLink to ={'/dialogs/'+props.id} activeClassName={classes.activeLink} className={classes.MyFIO}>{props.name}</NavLink>
       </div>
       
    )
