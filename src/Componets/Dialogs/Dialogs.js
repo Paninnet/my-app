@@ -21,17 +21,16 @@ const Dialogs = () => {
       {id: 13, name:"Даша"},
       {id: 14, name:"Наташа"},
       {id: 15, name:"Катя"},
-   ]
-
-   let messageData = [
+    ]
+    
+    let messageData = [
       {id: 1, message: "Хей как ты?"},
       {id: 2, message:"НОРМ"},
       {id: 3, message:"А ТЫ"},
       {id: 4, message:"Fuck RUDN"},
       {id: 5, message:"WEED"},
       {id: 6, message:"PEacE"},
-   ]
-
+    ]
    
    let allContact = contactsData.map((item) =>{
       return <ContactItem id={item.id} name={item.name}></ContactItem>

@@ -5,7 +5,7 @@ import MyData from './MyData/MyData'
 import classes from './MyPage.module.css'
 
 
-const MyPage = () => {
+const MyPage = (props) => {
 
    const postsdata = [
       {id:1, postText:"Привет, как тsы ?",quantityLikes:1 },
@@ -16,14 +16,19 @@ const MyPage = () => {
       {id:6, postText:"6",quantityLikes:6 },
       {id:7, postText:"7",quantityLikes:7 },
    ] 
+  
+   const mydata = [
+      {name: "Илья", surname :" Панин", city: "Москва", dateOfBirth : "30.09.1999"}
+   ]
 
       let allPost = postsdata.map((item) => {
          return <AllPosts message ={ item.postText} quantityLikes ={ item.quantityLikes}></AllPosts>
       })
+      
 
    return (
       <div className={classes.my_page_wrapper}>
-         <MyData />
+         <MyData name = {mydata[0].name} surname ={mydata[0].surname} city ={mydata[0].city} dateOfBirth = {mydata[0].dateOfBirth} />
          <div className={classes.posts}>
             <CreateNewPost />
             {allPost}
