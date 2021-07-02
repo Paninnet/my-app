@@ -23,7 +23,7 @@ function App(props) {
             <div className='mainContentItem'>
               <Route path ='/mypage'  render ={() =><MyPage state ={props.State.mypage}  /> } />
               <Route path ='/dialogs' render ={() => <Dialogs state ={props.State.dialogs} />} />
-              <Route path ='/friends' render ={() =><Friends/> } />
+              <Route path ='/friends' render ={() =><Friends state ={props.State.fiernds}/> } />
               <Route path ='/musics' render ={() => <Musics/>} />
             </div>
 

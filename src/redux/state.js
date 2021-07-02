@@ -45,6 +45,20 @@ const State ={
          {id: 6, message:"PEacE"},
        ],
    
+   },
+
+   fiernds : {
+     FriendsData : [
+       {id:1 ,name: "Ксюша", surname: "Панина", age:23 , img: "#"},
+       {id:2 ,name: "Мама", surname: "Панина", age:47 , img: "#"},
+       {id:3 ,name: "Папа", surname: "Панин", age:47 , img: "#"},
+       {id:4 ,name: "Маша", surname: "Панина", age:10 , img: "#"},
+       {id:5 ,name: "Теди", surname: "Панин", age:12 , img: "#"},
+     ],
+
+     allFriends(){
+       return this.FriendsData.length
+     }
    }
 
 }
