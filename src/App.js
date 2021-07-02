@@ -10,17 +10,9 @@ import { BrowserRouter,Route } from 'react-router-dom'
 import Friends from './Componets/Friends/Friends';
 import Musics from './Componets/Musics/Musics';
 
-// const postsdata = [
-//   {id:1, postText:"Привет, как тsы ?",quantityLikes:1 },
-//   {id:2, postText:"2",quantityLikes:2 },
-//   {id:3, postText:"3",quantityLikes:3 },
-//   {id:4, postText:"4",quantityLikes:4 },
-//   {id:5, postText:"5",quantityLikes:5 },
-//   {id:6, postText:"6",quantityLikes:6 },
-//   {id:7, postText:"7",quantityLikes:7 },
-// ] 
 
-function App() {
+
+function App(props) {
   return (
     <BrowserRouter>
       <div className='wrapper'>
@@ -29,10 +21,10 @@ function App() {
           <div className='mainContent'>
             <SideBar />
             <div className='mainContentItem'>
-              <Route path ='/mypage'  component = {MyPage}/>
-              <Route path ='/dialogs' component = {Dialogs}/>
-              <Route path ='/friends' component = {Friends}/>
-              <Route path ='/musics' component = {Musics}/>
+              <Route path ='/mypage'  render ={() =><MyPage state ={props.State.mypage}  /> } />
+              <Route path ='/dialogs' render ={() => <Dialogs state ={props.State.dialogs} />} />
+              <Route path ='/friends' render ={() =><Friends/> } />
+              <Route path ='/musics' render ={() => <Musics/>} />
             </div>
 
           </div>
