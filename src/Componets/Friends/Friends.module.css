@@ -1,52 +1,7 @@
 .friends_wrapper{
    margin: 20px;
    width: 98%;
-   border: 1px solid red;
-}
-/* ____________________ */
-.quantityFrineds{
-   background-color: white;
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-}
-.totalFrinds{
-   display: flex;
-   flex-direction: row;
-   background-color: rgba(195, 194, 197, 0.152);
-}
-.friends{
-   font-size: 16px;
-   font-family: monospace;
-    margin: 15px;
-}
-.friends:nth-child(2){
-   margin-left: 70px;
-   margin-right: 155px;
-}
-.searchButton{
-   background-color: white;
-   border-radius: 10px;
-   margin: 5px 10px 5px 0px;
-   display: block;
+
 }
 
-/* _______________________________________ */
-.searchFriends{
-   display: flex;
-   flex-direction: row;
-}
-.seacrIcon{
-   width: 25px;
-}
-
-
-.inputArea{
-   display: block;
-   width: 100%;
-   height: 40px;
-   margin-left: 15px;
-   background-size: 25px;
-   margin-left: 15px;
-}
 

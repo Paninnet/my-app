@@ -1,0 +1,35 @@
+/* _______________________________________ */
+.frindsImg{
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+   border: 1px solid black;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+}
+.frinedIMG{
+   width: 70px;
+   height: 70px;
+   display: block;
+}
+.friends_item_wrapper{
+   /* margin: 15px; */
+   background-color: white;
+   margin-bottom: 20px;
+}
+.frineds_item{
+   display: flex;
+   flex-direction: row;
+   padding: 15px;
+   align-items: center;
+   border-bottom: 2px solid silver;
+
+
+}
+.frindsFIO{
+   font-size: 18px;
+   font-family: monospace;
+   margin-left: 50px;
+}
