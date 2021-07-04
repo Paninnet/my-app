@@ -1,9 +1,21 @@
+import React from 'react'
 import ContactItem from './Contact_item/Cotnact_item'
 import Message_item from './Message_item/Message_item'
 import classes from './Dialogs.module.css'
 
 const Dialogs = (props) => {
+   debugger
+   console.log(props);
+   let newMessageRef = React.createRef()
 
+
+   let postNewMessage = () =>{
+    props.newMesage(newMessageRef.current.value)
+   }
+   let newMessage = () => {
+      props.updateNewMessageText(newMessageRef.current.value);
+   }
+   
    let allContact = props.state.contactsData.map((item) =>{
       return <ContactItem id={item.id} name={item.name}></ContactItem>
    })
@@ -19,7 +31,10 @@ const Dialogs = (props) => {
          </div>
          <div className = {classes.contact_message_wrapper}>
             {allMessage}
+            <textarea  onChange={newMessage} ref={newMessageRef} value={props.newMessageText}></textarea>
+            <button onClick={postNewMessage}>Отправить</button>
          </div>
+        
 
       </div>
 

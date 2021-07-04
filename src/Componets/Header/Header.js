@@ -14,8 +14,5 @@ const Header = () => {
       
    )
    }
-   window.addEventListener("scroll", ()=>{
-      let y = window.pageYOffset
-      console.log(y);
-   })
+
 export default Header

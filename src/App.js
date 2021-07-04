@@ -13,6 +13,8 @@ import Musics from './Componets/Musics/Musics';
 
 
 function App(props) {
+
+  
   return (
     <BrowserRouter>
       <div className='wrapper'>
@@ -21,8 +23,14 @@ function App(props) {
           <div className='mainContent'>
             <SideBar />
             <div className='mainContentItem'>
-              <Route path ='/mypage'  render ={() =><MyPage state ={props.State.mypage}  /> } />
-              <Route path ='/dialogs' render ={() => <Dialogs state ={props.State.dialogs} />} />
+              <Route path ='/mypage'  render ={() =><MyPage state ={props.State.mypage} 
+                                                                    newPostText ={props.State.mypage} 
+                                                                    newPost={props.newPost}  
+                                                                    updateNewPostText ={props.updateNewPostText}/> } />
+              <Route path ='/dialogs' render ={() => <Dialogs state ={props.State.dialogs} 
+                                                                      newMessageText = {props.State.dialogs.newMessageText}
+                                                                      newMesage ={props.newMesage}
+                                                                      updateNewMessageText ={props.updateNewMessageText} />} />
               <Route path ='/friends' render ={() =><Friends state ={props.State.fiernds}/> } />
               <Route path ='/musics' render ={() => <Musics/>} />
             </div>

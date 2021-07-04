@@ -1,3 +1,4 @@
+import { rerenderEntireTree } from "../render"
 const State ={ 
 
    mypage :{
@@ -14,7 +15,9 @@ const State ={
 
        mydata : [
          {name: "Илья", surname :" Панин", city: "Москва", dateOfBirth : "30.09.1999"}
-       ]
+       ], 
+
+       newPostText :""
    },
   
    dialogs :{
@@ -44,6 +47,8 @@ const State ={
          {id: 5, message:"WEED"},
          {id: 6, message:"PEacE"},
        ],
+       
+       newMessageText:""
    
    },
 
@@ -63,5 +68,40 @@ const State ={
    }
 
 }
+window.state=State
 
+export let newPost = (message,quantityLikes) =>{
+
+    let newText ={
+        id:9,
+        postText:message,
+        quantityLikes:quantityLikes
+    }
+    State.mypage.postsdata.unshift(newText)
+    State.mypage.newPostText=""
+    rerenderEntireTree(State)
+}
+
+export let updateNewPostText = (body) =>{
+    State.mypage.newPostText=body
+    rerenderEntireTree(State)
+}
+
+export let newMesage = (message) =>{
+  let newText = {
+    id:7,
+    message:message
+  }
+  State.dialogs.messageData.unshift(newText)
+  State.dialogs.newMessageText=""
+  rerenderEntireTree(State)
+}
+
+export let updateNewMessageText = (body) => {
+  State.dialogs.newMessageText = body
+  rerenderEntireTree(State)
+}
+
+
+ 
 export default State

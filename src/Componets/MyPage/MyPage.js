@@ -7,6 +7,8 @@ import classes from './MyPage.module.css'
 
 const MyPage = (props) => {
 
+      
+      
       let allPost = props.state.postsdata.map((item) => {
          return <AllPosts message ={ item.postText} quantityLikes ={ item.quantityLikes}></AllPosts>
       })
@@ -21,7 +23,7 @@ const MyPage = (props) => {
       <div className={classes.my_page_wrapper}>
          {AllMyData}
          <div className={classes.posts}>
-            <CreateNewPost />
+            <CreateNewPost updateNewPostText ={props.updateNewPostText} newPostText={props.newPostText} newpost ={props.newPost}/>
             {allPost}
          </div>
 
