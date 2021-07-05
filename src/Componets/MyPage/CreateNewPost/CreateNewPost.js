@@ -1,6 +1,6 @@
 import classes from './CreateNewPost.module.css'
 import React from 'react'
-import {SendPOstActionCreatot,onTextAreaChangeActionCreator} from '../../../redux/state'
+import {SendPOstActionCreatot,onTextAreaChangeActionCreator} from '../../../redux/mypageReduce'
 
 
 const CreateNewPost = (props) =>{

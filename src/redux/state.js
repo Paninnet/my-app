@@ -1,7 +1,11 @@
-const NEWPOST ="NEWPOST"
-const UPDATENEWPOSTTEXT = "UPDATENEWPOSTTEXT"
-const NEWMESSAGE = "NEWMESSAGE"
-const UPDATENEWMESSAGETEXT = "UPDATENEWMESSAGETEXT"
+import mypageReducer from './mypageReduce'
+import dialogsReducer from './dialogsReducer'
+import friendsReducer from './friendsReducer'
+
+
+
+
+
 
 let store = {
   _State: {
@@ -86,71 +90,17 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === "NEWPOST") {
-      let newText = {
-        id: 9,
-        postText: action.message,
-        quantityLikes: action.quantityLikes
-      }
-      this._State.mypage.postsdata.unshift(newText)
-      this._State.mypage.newPostText = ""
-      this.rerenderEntireTree(this._State)
-    }
-    else if (action.type === "UPDATENEWPOSTTEXT") {
-      this._State.mypage.newPostText = action.body
-      this.rerenderEntireTree(this._State)
-    }
-    else if( action.type === "NEWMESSAGE"){
-      let newText = {
-        id: 7,
-        message: action.message
-      }
-      this._State.dialogs.messageData.unshift(newText)
-      this._State.dialogs.newMessageText = ""
-      this.rerenderEntireTree(this._State)
-    }
-    else if (action.type === "UPDATENEWMESSAGETEXT"){
-      this._State.dialogs.newMessageText = action.body
-      this.rerenderEntireTree(this._State)
-    }
+    
+    this._State.mypage = mypageReducer(this._State.mypage,action)
+    this._State.dialogs = dialogsReducer(this._State.dialogs,action)
+    this._State.fiernds = friendsReducer(this._State.fiernds,action)
+    this.rerenderEntireTree(this._State)
   }
-
-
-  
-
 
 }
 
-export let SendPOstActionCreatot = (cuurentValue,quantityLikes) =>{
-  return {
-     type: NEWPOST,
-     message : cuurentValue,
-     quantityLikes: quantityLikes
 
-  }
-}
 
-export let onTextAreaChangeActionCreator = (body) =>{
-  return {
-     type : UPDATENEWPOSTTEXT,
-     body : body
-  }
-}
-
-export let newMessageActionCreator = (message) =>{
-  return {
-     type:NEWMESSAGE,
-     message :message
-
-  }
-}
-
-export let updateNewMessageTextActionCreator = (body) =>{
-  return {
-     type: UPDATENEWMESSAGETEXT,
-     body:body
-  }
-}
 
 
 export default store

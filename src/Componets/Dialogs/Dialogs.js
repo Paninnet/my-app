@@ -2,9 +2,11 @@ import React from 'react'
 import ContactItem from './Contact_item/Cotnact_item'
 import Message_item from './Message_item/Message_item'
 import classes from './Dialogs.module.css'
-import {newMessageActionCreator,updateNewMessageTextActionCreator} from '../../redux/state'
+import {newMessageActionCreator,updateNewMessageTextActionCreator} from '../../redux/dialogsReducer'
 
 const Dialogs = (props) => {
+
+ 
 
    
   
@@ -12,15 +14,19 @@ const Dialogs = (props) => {
 
 
    let postNewMessage = () =>{
+      debugger
     let message = newMessageRef.current.value
     props.dispatch(newMessageActionCreator(message))
+  
    }
 
    let newMessage = () => {
       let body = newMessageRef.current.value
       props.dispatch(updateNewMessageTextActionCreator(body));
+
    }
    
+   debugger
    let allContact = props.state.contactsData.map((item) =>{
       return <ContactItem id={item.id} name={item.name}></ContactItem>
    })
@@ -36,7 +42,7 @@ const Dialogs = (props) => {
          </div>
          <div className = {classes.contact_message_wrapper}>
             {allMessage}
-            <textarea  onChange={newMessage} ref={newMessageRef} value={props.newMessageText}></textarea>
+            <textarea  onChange={newMessage} ref={newMessageRef} value={props.state.newMessageText}></textarea>
             <button onClick={postNewMessage}>Отправить</button>
          </div>
         
