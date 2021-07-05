@@ -1,3 +1,8 @@
+const NEWPOST ="NEWPOST"
+const UPDATENEWPOSTTEXT = "UPDATENEWPOSTTEXT"
+const NEWMESSAGE = "NEWMESSAGE"
+const UPDATENEWMESSAGETEXT = "UPDATENEWMESSAGETEXT"
+
 let store = {
   _State: {
 
@@ -76,9 +81,6 @@ let store = {
     console.log('State changed');
   },
 
-
- 
-
   subscrider(observer) {
     this.rerenderEntireTree = observer
   },
@@ -114,6 +116,40 @@ let store = {
   }
 
 
+  
+
+
+}
+
+export let SendPOstActionCreatot = (cuurentValue,quantityLikes) =>{
+  return {
+     type: NEWPOST,
+     message : cuurentValue,
+     quantityLikes: quantityLikes
+
+  }
+}
+
+export let onTextAreaChangeActionCreator = (body) =>{
+  return {
+     type : UPDATENEWPOSTTEXT,
+     body : body
+  }
+}
+
+export let newMessageActionCreator = (message) =>{
+  return {
+     type:NEWMESSAGE,
+     message :message
+
+  }
+}
+
+export let updateNewMessageTextActionCreator = (body) =>{
+  return {
+     type: UPDATENEWMESSAGETEXT,
+     body:body
+  }
 }
 
 

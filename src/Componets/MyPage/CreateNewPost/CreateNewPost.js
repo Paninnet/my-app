@@ -1,16 +1,21 @@
 import classes from './CreateNewPost.module.css'
 import React from 'react'
+import {SendPOstActionCreatot,onTextAreaChangeActionCreator} from '../../../redux/state'
+
 
 const CreateNewPost = (props) =>{
    let newPost = React.createRef()
 
    let SendNewPostBody = () =>{
+   let cuurentValue = newPost.current.value 
+   let quantityLikes = parseInt(Math.random() * (100-1))
       
-   props.dispatch({type :"NEWPOST",message:newPost.current.value,quantityLikes:70})      
+   props.dispatch (SendPOstActionCreatot(cuurentValue,quantityLikes)  ) 
    }
 
    let onTextAreaChange = () =>{
-      props.dispatch ({type : "UPDATENEWPOSTTEXT",body:newPost.current.value})
+      let body = newPost.current.value
+      props.dispatch (onTextAreaChangeActionCreator(body))
    }
 
    

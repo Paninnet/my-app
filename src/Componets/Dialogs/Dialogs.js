@@ -2,19 +2,23 @@ import React from 'react'
 import ContactItem from './Contact_item/Cotnact_item'
 import Message_item from './Message_item/Message_item'
 import classes from './Dialogs.module.css'
+import {newMessageActionCreator,updateNewMessageTextActionCreator} from '../../redux/state'
 
 const Dialogs = (props) => {
+
    
   
    let newMessageRef = React.createRef()
 
 
    let postNewMessage = () =>{
-    props.dispatch({type:"NEWMESSAGE",message:newMessageRef.current.value})
+    let message = newMessageRef.current.value
+    props.dispatch(newMessageActionCreator(message))
    }
 
    let newMessage = () => {
-      props.dispatch({type:"UPDATENEWMESSAGETEXT",body:newMessageRef.current.value});
+      let body = newMessageRef.current.value
+      props.dispatch(updateNewMessageTextActionCreator(body));
    }
    
    let allContact = props.state.contactsData.map((item) =>{
