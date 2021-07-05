@@ -4,16 +4,17 @@ import Message_item from './Message_item/Message_item'
 import classes from './Dialogs.module.css'
 
 const Dialogs = (props) => {
-   debugger
-   console.log(props);
+   
+  
    let newMessageRef = React.createRef()
 
 
    let postNewMessage = () =>{
-    props.newMesage(newMessageRef.current.value)
+    props.dispatch({type:"NEWMESSAGE",message:newMessageRef.current.value})
    }
+
    let newMessage = () => {
-      props.updateNewMessageText(newMessageRef.current.value);
+      props.dispatch({type:"UPDATENEWMESSAGETEXT",body:newMessageRef.current.value});
    }
    
    let allContact = props.state.contactsData.map((item) =>{

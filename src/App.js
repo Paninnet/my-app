@@ -24,13 +24,13 @@ function App(props) {
             <SideBar />
             <div className='mainContentItem'>
               <Route path ='/mypage'  render ={() =><MyPage state ={props.State.mypage} 
-                                                                    newPostText ={props.State.mypage} 
-                                                                    newPost={props.newPost}  
-                                                                    updateNewPostText ={props.updateNewPostText}/> } />
+                                                          
+                                                                    dispatch={props.dispatch}  
+                                                                    /> } />
               <Route path ='/dialogs' render ={() => <Dialogs state ={props.State.dialogs} 
-                                                                      newMessageText = {props.State.dialogs.newMessageText}
-                                                                      newMesage ={props.newMesage}
-                                                                      updateNewMessageText ={props.updateNewMessageText} />} />
+                                                                      
+                                                                      dispatch ={props.dispatch}
+                                                                       />} />
               <Route path ='/friends' render ={() =><Friends state ={props.State.fiernds}/> } />
               <Route path ='/musics' render ={() => <Musics/>} />
             </div>
