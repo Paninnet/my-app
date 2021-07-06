@@ -85,7 +85,7 @@ let store = {
     console.log('State changed');
   },
 
-  subscrider(observer) {
+  subscride(observer) {
     this.rerenderEntireTree = observer
   },
 

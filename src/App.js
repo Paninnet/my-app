@@ -5,10 +5,10 @@ import './App.css';
 import Header from './Componets/Header/Header';
 import SideBar from './Componets/Sidebar/SideBar';
 import MyPage from './Componets/MyPage/MyPage';
-import Dialogs from './Componets/Dialogs/Dialogs';
 import { BrowserRouter,Route } from 'react-router-dom'
 import Friends from './Componets/Friends/Friends';
 import Musics from './Componets/Musics/Musics';
+import DialogsContainer from './Componets/Dialogs/DialogsContainer';
 
 
 
@@ -28,7 +28,7 @@ function App(props) {
                                                           
                                                                     dispatch={props.dispatch}  
                                                                     /> } />
-              <Route path ='/dialogs' render ={() => <Dialogs state ={props.State.dialogs} 
+              <Route path ='/dialogs' render ={() =>  <DialogsContainer state ={props.State.dialogs} 
                                                                       
                                                                       dispatch ={props.dispatch}
                                                                        />} />

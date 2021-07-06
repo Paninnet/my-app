@@ -1,12 +1,14 @@
 import React from 'react'
 import AllPosts from './AllPosts/AllPosts'
 import CreateNewPost from './CreateNewPost/CreateNewPost'
+import CreateNewPostContainer from './CreateNewPost/CreateNewPostContainer'
 import MyData from './MyData/MyData'
 import classes from './MyPage.module.css'
 
 
 const MyPage = (props) => {
 
+  
    
       
       let allPost = props.state.postsdata.map((item) => {
@@ -23,7 +25,8 @@ const MyPage = (props) => {
       <div className={classes.my_page_wrapper}>
          {AllMyData}
          <div className={classes.posts}>
-            <CreateNewPost dispatch ={props.dispatch} newPostText={props.state.newPostText} />
+            {/* <CreateNewPost dispatch ={props.dispatch} newPostText={props.state.newPostText} /> */}
+            <CreateNewPostContainer dispatch = {props.dispatch} newPostText={props.state.newPostText}/>
             {allPost}
          </div>
 

@@ -1,4 +1,4 @@
-import store from './redux/state';
+import store from './redux/reduxStore';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -22,7 +22,10 @@ let rerenderEntireTree = (State) => {
 
 
 rerenderEntireTree(store.getState)
-store.subscrider(rerenderEntireTree)
+store.subscribe(() =>{
+  let state = store.getState
+  rerenderEntireTree(state)
+})
 
 
 
