@@ -1,4 +1,4 @@
-import Finde_friends from './Finde_friends/Finde_friends'
+import Finde_my_friends from './Finde_my_friends/Finde_my_friends'
 
 import classes from './Friends.module.css'
 import Frineds_list from './Friends_list/Friends_list'
@@ -6,7 +6,7 @@ import Frineds_list from './Friends_list/Friends_list'
 
 
 const Friends = (props) => {
-
+debugger
    
    const friendItem =props.state.FriendsData.map ((item => {
       return <Frineds_list img = {item.img} name = {item.name} surname = {item.surname}></Frineds_list>
@@ -14,8 +14,7 @@ const Friends = (props) => {
    )
    return (
       <div className={classes.friends_wrapper}>
-         
-            <Finde_friends allfriends ={props}/>
+            <Finde_my_friends allfriends ={props}/>
             {friendItem}
       </div>
    )

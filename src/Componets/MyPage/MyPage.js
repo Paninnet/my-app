@@ -1,22 +1,18 @@
 import React from 'react'
 import AllPosts from './AllPosts/AllPosts'
 import CreateNewPost from './CreateNewPost/CreateNewPost'
-import CreateNewPostContainer from './CreateNewPost/CreateNewPostContainer'
 import MyData from './MyData/MyData'
 import classes from './MyPage.module.css'
 
 
 const MyPage = (props) => {
-
-  
-   
-      
-      let allPost = props.state.postsdata.map((item) => {
+  debugger
+      let allPost = props.data.postsdata.map((item) => {
          return <AllPosts message ={ item.postText} quantityLikes ={ item.quantityLikes}></AllPosts>
       })
 
       
-      let AllMyData = props.state.mydata.map ((item =>{
+      let AllMyData = props.data.mydata.map ((item =>{
          return <MyData name= {item.name} surname ={item.surname} city ={item.city} dateOfBirth = {item.dateOfBirth}></MyData>
       })
       )
@@ -25,8 +21,7 @@ const MyPage = (props) => {
       <div className={classes.my_page_wrapper}>
          {AllMyData}
          <div className={classes.posts}>
-            {/* <CreateNewPost dispatch ={props.dispatch} newPostText={props.state.newPostText} /> */}
-            <CreateNewPostContainer dispatch = {props.dispatch} newPostText={props.state.newPostText}/>
+            <CreateNewPost SendNewPostBody ={props.SendNewPostBody} onTextAreaChange={props.onTextAreaChange} newPostText={props.data.newPostText} ></CreateNewPost>
             {allPost}
          </div>
 

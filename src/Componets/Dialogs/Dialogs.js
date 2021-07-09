@@ -5,7 +5,7 @@ import classes from './Dialogs.module.css'
 
 
 const Dialogs = (props) => {
-   debugger
+
 
 
    let newMessageRef = React.createRef()
@@ -22,8 +22,7 @@ const Dialogs = (props) => {
       props.newMessage(body)
 
    }
-   
-   debugger
+
    let allContact = props.data.contactsData.map((item) =>{
       return <ContactItem id={item.id} name={item.name}></ContactItem>
    })

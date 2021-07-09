@@ -21,29 +21,30 @@ let initialState = {
 }
 
 const mypageReducer = (state = initialState, action) => {
-
+  let stateCopy = {...state , postsdata:[...state.postsdata]
+   }
   switch (action.type) {
+    
     case NEWPOST:
       let newText = {
         id: 9,
-        postText: action.message,
+        postText: state.newPostText,
         quantityLikes: action.quantityLikes
       }
-      state.postsdata.unshift(newText)
-      state.newPostText = ""
-      return state
+      stateCopy.postsdata.unshift(newText)
+      stateCopy.newPostText = ""
+      return stateCopy
     case UPDATENEWPOSTTEXT:
-      state.newPostText = action.body
-      return state
-    default:
-      return state
+      stateCopy.newPostText = action.body
+      return stateCopy
+    default: return stateCopy
   }
 
 }
 export let SendPOstActionCreatot = (cuurentValue,quantityLikes) =>{
   return {
      type: NEWPOST,
-     message : cuurentValue,
+     cuurentValue : cuurentValue,
      quantityLikes: quantityLikes
 
   }

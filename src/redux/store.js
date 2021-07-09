@@ -1,15 +1,11 @@
 import mypageReducer from './mypageReduce'
 import dialogsReducer from './dialogsReducer'
 import friendsReducer from './friendsReducer'
-
-
-
-
+import usersReducer from './usersReducer'
 
 
 let store = {
   _State: {
-
     mypage: {
       postsdata: [
         { id: 1, postText: "Привет, как тsы ?", quantityLikes: 1 },
@@ -70,10 +66,30 @@ let store = {
         { id: 5, name: "Теди", surname: "Панин", age: 12, img: "https://sun9-22.userapi.com/impg/M8tbQvcz1N3pu4Z-Z1bWoUBwfNxM9AhmpTLjUQ/6pvRUxyY46c.jpg?size=720x960&quality=96&sign=42774b39b4e77a01e55b9d02711f2332&type=album" },
 
       ],
+      FriendsSex:[
+        1,2,3,4,5
+      ],
 
       allFriends() {
         return this.FriendsData.length
       }
+    },
+    users:{
+      UsersData :[
+          {id:1, followed :true, fullname: "Ефремова Лилия"},
+          {id:2, followed :true, fullname: "Бердник Лилия" ,},
+          {id:3, followed :false, fullname: "Наумова Цара" ,},
+          {id:4, followed :false, fullname: "Максимова Алла" ,},
+          {id:5, followed :false, fullname: "Ярова Мария" ,},
+          {id:6, followed :false, fullname: "Кузьмина Береслава" ,},
+          {id:7, followed :true, fullname: "Беляева Раиса" ,},
+          {id:8, followed :true, fullname: "Кличко Клавдия" ,},
+          {id:9, followed :true, fullname: "Борисенко Ульяна" ,},
+          {id:10, followed :true, fullname: "Журавлёва Прасковья" ,},
+          {id:11, followed :true, fullname: "Журавлёва Прасковья" ,},
+          {id:12, followed :true, fullname: "Кузьмина Береслава" ,},
+          {id:13, followed :true, fullname: "Гребневска Таисия" ,},
+      ]
     }
 
   },
@@ -94,6 +110,7 @@ let store = {
     this._State.mypage = mypageReducer(this._State.mypage,action)
     this._State.dialogs = dialogsReducer(this._State.dialogs,action)
     this._State.fiernds = friendsReducer(this._State.fiernds,action)
+    this._State.users = usersReducer(this._State.users,action)
     this.rerenderEntireTree(this._State)
   }
 
