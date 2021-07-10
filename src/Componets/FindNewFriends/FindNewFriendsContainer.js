@@ -23,12 +23,13 @@ let mapDispatchToProps = (dispatch) =>{
       unfollow:(userId) => {
          dispatch(unfollowActionCreator(userId))
       },
-      setUsers: (users) =>{
+      setUsers:(users) =>{
          dispatch(setUsersActionCreator(users))
       },
-      setCurrentPage:(pageNumber) =>{
-         dispatch(setCurrentPageActionCreator(pageNumber))
+      setCurrentPage:(currentPage) =>{
+         dispatch(setCurrentPageActionCreator(currentPage))
       },
+      
       setTotalUsersCount:(totalUsers) =>{
          dispatch(setTotalUsersCountActionCreator(totalUsers))
       }

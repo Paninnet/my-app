@@ -4,7 +4,7 @@ import {SendPOstActionCreatot,onTextAreaChangeActionCreator} from '../../../redu
 
 
 const CreateNewPost = (props) =>{
-   debugger
+  
 
    let newPost = React.createRef()
 

@@ -7,33 +7,42 @@ import defaultUserImgpng from '../../assets/img/defaultUserImg.png'
 class FindNewFriends extends React.Component {
 
    
-
    componentDidMount() {
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currenPage}&count=${this.props.pageSize}`)
-         .then(response => {
-            this.props.setUsers(response.data.items)
-            this.props.setTotalUsersCount(response.data.totalCount)
-         })
+      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+      .then(data =>{
+
+         this.props.setUsers(data.data.items) 
+         this.props.setTotalUsersCount(data.data.totalCount)
+         console.log(data)})
+         
+
+
    }
 
    onPageChanged = (item) =>{
       this.props.setCurrentPage(item)
       axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${item}&count=${this.props.pageSize}`)
-      .then(response => {
-         this.props.setUsers(response.data.items)
-      })
+      .then(data =>{
+         this.props.setUsers(data.data.items) 
+         console.log(data)})
+         
    }
+
 
 
    render() {
 
-      let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
-      let pages = []
-      for (let i = 1; i <= pagesCount; i++) {
-         pages.push(i)
-      }
+ 
 
 
+   let pagesCount = Math.ceil(this.props.totalUsersCount/this.props.pageSize)
+   let pages =[] 
+   for (let i =1; i <= pagesCount; i++){
+      pages.push(i)
+   }
+   
+
+      
       let NewFriends = this.props.data.map((item => {
          return <FindNewFriendsItem id={item.id} follow={this.props.follow} unfollow={this.props.unfollow} followed={item.followed} src={item.photos.small !== null ? item.photos.small : defaultUserImgpng} name={item.name}></FindNewFriendsItem>
       })
@@ -45,10 +54,12 @@ class FindNewFriends extends React.Component {
 
          <div className={classes.friends_wrapper}>
             <div className={classes.total_page}>
-               {pages.slice(0,10).map(item => {
-                  return <span className={this.props.currentPage === item && classes.selected} 
-                   onClick={(e) =>{this.onPageChanged(item)}}>{item}</span>
-               })}
+             { pages.slice(0,10).map(item=>{
+                 return <span className={this.props.currentPage === item && classes.selected} 
+                 onClick={()=>{this.onPageChanged(item)}}
+                 >{item}</span>
+              })}
+
             </div>
          
             <div className={classes.searchFriends}>

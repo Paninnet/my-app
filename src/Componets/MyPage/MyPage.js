@@ -6,7 +6,7 @@ import classes from './MyPage.module.css'
 
 
 const MyPage = (props) => {
-  debugger
+  
       let allPost = props.data.postsdata.map((item) => {
          return <AllPosts message ={ item.postText} quantityLikes ={ item.quantityLikes}></AllPosts>
       })
