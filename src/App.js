@@ -26,7 +26,7 @@ function App(props) {
           <div className='mainContent'>
             <SideBar />
             <div className='mainContentItem'>
-              <Route path ='/mypage'  render ={() =><MyPageContainer/> } />
+              <Route path ='/mypage/:userId?'  render ={() =><MyPageContainer/> } />
               <Route path ='/dialogs' render ={() =>  <DialogsContainer/>} />
               <Route path ='/friends' render ={() =><Friends state ={props.State.fiernds}/> } />
               <Route path = '/newfriends' render ={() => <FindNewFriendContainer/>}/>
