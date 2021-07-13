@@ -5,7 +5,6 @@ import MyPage from './MyPage'
 import { withRouter } from 'react-router-dom';
 
 let mapStateToProsp = (_State) => {
-   console.log(_State);
    return{
       data:_State.mypage,
       profile:_State.mypage.data

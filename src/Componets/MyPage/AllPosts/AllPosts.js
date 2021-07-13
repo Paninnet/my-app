@@ -1,7 +1,7 @@
 import classes from './AllPosts.module.css'
 
 const AllPosts =(props) => {
-   console.log(props);
+
    if(!props.profile){
       return(
          <div className ={classes.itemPosts_wrapper}>
