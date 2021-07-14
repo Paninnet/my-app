@@ -1,9 +1,8 @@
 .header{
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    justify-content: center;
-   /* position: fixed; */
-   /* width: 90%; */
+   
 
 }
 
@@ -14,4 +13,13 @@
    margin: 20px;
    text-align: center;
 
+}
+.login{
+   display: flex;
+   justify-content: center;
+}
+.login a{
+   font-size: 14px;
+   font-family: monospace;
+   color: black;
 }

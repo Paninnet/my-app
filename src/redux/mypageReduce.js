@@ -1,5 +1,6 @@
 const NEWPOST = "NEWPOST"
 const UPDATENEWPOSTTEXT = "UPDATENEWPOSTTEXT"
+const SETMYPAGE = "SETMYPAGE"
 
 let initialState = {
   postsdata: [
@@ -17,7 +18,10 @@ let initialState = {
     { name: "Илья", surname: " Панин", city: "Москва", dateOfBirth: "30.09.1999" }
   ],
 
-  newPostText: ""
+  newPostText: "",
+
+  data: null
+
 }
 
 const mypageReducer = (state = initialState, action) => {
@@ -37,6 +41,8 @@ const mypageReducer = (state = initialState, action) => {
     case UPDATENEWPOSTTEXT:
       stateCopy.newPostText = action.body
       return stateCopy
+    case SETMYPAGE:
+      return {...state,data:action.data }
     default: return stateCopy
   }
 
@@ -55,6 +61,10 @@ export let onTextAreaChangeActionCreator = (body) =>{
      type : UPDATENEWPOSTTEXT,
      body : body
   }
+}
+
+export let setMyPageActionCreator = (data) =>{
+  return({type:SETMYPAGE, data})
 }
 
 export default mypageReducer

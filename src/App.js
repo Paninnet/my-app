@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 
-import Header from './Componets/Header/Header';
+import HeaderContainer from './Componets/Header/HeaderContainer'
 import SideBar from './Componets/Sidebar/SideBar';
 import MyPageContainer from './Componets/MyPage/MyPageContainer'
 import { BrowserRouter,Route } from 'react-router-dom'
@@ -22,11 +22,11 @@ function App(props) {
     <BrowserRouter>
       <div className='wrapper'>
         <div className='container'>
-          <Header />
+          <HeaderContainer />
           <div className='mainContent'>
             <SideBar />
             <div className='mainContentItem'>
-              <Route path ='/mypage'  render ={() =><MyPageContainer/> } />
+              <Route path ='/mypage/:userId?'  render ={() =><MyPageContainer/> } />
               <Route path ='/dialogs' render ={() =>  <DialogsContainer/>} />
               <Route path ='/friends' render ={() =><Friends state ={props.State.fiernds}/> } />
               <Route path = '/newfriends' render ={() => <FindNewFriendContainer/>}/>

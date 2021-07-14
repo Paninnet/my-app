@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 
 
 let mapStateToProps = (_State) => {
-
    return{
       data:_State.dialogs
    }

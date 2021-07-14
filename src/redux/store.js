@@ -105,14 +105,14 @@ let store = {
     this.rerenderEntireTree = observer
   },
 
-  dispatch(action) {
+  // dispatch(action) {
     
-    this._State.mypage = mypageReducer(this._State.mypage,action)
-    this._State.dialogs = dialogsReducer(this._State.dialogs,action)
-    this._State.fiernds = friendsReducer(this._State.fiernds,action)
-    this._State.users = usersReducer(this._State.users,action)
-    this.rerenderEntireTree(this._State)
-  }
+  //   this._State.mypage = mypageReducer(this._State.mypage,action)
+  //   this._State.dialogs = dialogsReducer(this._State.dialogs,action)
+  //   this._State.fiernds = friendsReducer(this._State.fiernds,action)
+  //   this._State.users = usersReducer(this._State.users,action)
+  //   this.rerenderEntireTree(this._State)
+  // }
 
 }
 
