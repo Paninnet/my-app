@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { followActionCreator, setCurrentPageActionCreator, setTotalUsersCountActionCreator, setUsersActionCreator, unfollowActionCreator, setIsFetchingActionCreator } from '../../redux/usersReducer'
+import { followActionCreator, setCurrentPageActionCreator, setTotalUsersCountActionCreator, setUsersActionCreator, unfollowActionCreator, setIsFetchingActionCreator , setFollowingInProgressActionCreator } from '../../redux/usersReducer'
 import FindNewFriends from './FindNewFriendsClassComponet copy'
 
 
@@ -12,7 +12,8 @@ let mapStateToProsp = (_State) =>{
       pageSize:_State.users.pageSize,
       totalUsersCount:_State.users.totalUsersCount,
       currentPage:_State.users.currentPage,
-      isFetching:_State.users.isFetching
+      isFetching:_State.users.isFetching,
+      followingInProgress:_State.users.followingInProgress
       
    }
 }
@@ -36,6 +37,9 @@ let mapDispatchToProps = (dispatch) =>{
       },
       setIsFetching:(isFetching) =>{
          dispatch(setIsFetchingActionCreator(isFetching))
+      },
+      setFollowingInProgress:(isFetching, userId) =>{
+         dispatch(setFollowingInProgressActionCreator(isFetching,userId))
       }
    }
 }
